@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify
 import base64
-import os
 import datetime
 
 app = Flask(__name__)
@@ -52,6 +51,5 @@ def handle_post():
 def handle_get():
     return jsonify({"operation_code": "GET_SUCCESS"})
 
-# This is the export for Vercel
-def handler(request, context):
-    return app(request.environ, start_response=context)
+if __name__ == "__main__":
+    app.run()
